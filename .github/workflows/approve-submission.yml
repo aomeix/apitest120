@@ -29,7 +29,7 @@ jobs:
             const doc = `<!DOCTYPE html>\n<html>\n<head><title>${title}</title></head>\n<body>\n<h1>${title}</h1>\n${html}\n</body>\n</html>`;
 
             fs.mkdirSync('wiki', { recursive: true });
-            fs.writeFileSync(`wiki/${slug}.html`, doc);
+            fs.writeFileSync(`${slug}.html`, doc);
 
       - run: |
           git config --global user.name "bot"
