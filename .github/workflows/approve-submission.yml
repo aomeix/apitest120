@@ -29,11 +29,11 @@ jobs:
             const doc = `<!DOCTYPE html>\n<html>\n<head><title>${title}</title></head>\n<body>\n<h1>${title}</h1>\n${html}\n</body>\n</html>`;
 
             fs.mkdirSync('wiki', { recursive: true });
-            fs.writeFileSync(`page/${slug}.html`, doc);
+            fs.writeFileSync(`${slug}.html`, doc);
 
       - run: |
           git config --global user.name "bot"
           git config --global user.email "bot@users.noreply.github.com"
-          git add wiki/
+          git add .
           git commit -m "add page #${{ github.event.issue.number }}"
           git push
